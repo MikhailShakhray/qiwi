@@ -16,7 +16,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -33,10 +32,7 @@ public class Main {
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.parse(new InputSource(new StringReader(result)));
         Element rootElement = document.getDocumentElement();
-        NodeList charcode = document.getElementsByTagName("ChatCode");
-        Node item = charcode.item(0);
-        System.out.println(item.getTextContent());
-
+        System.out.println(rootElement.getElementsByTagName("CharCode"));
 
 
     }
